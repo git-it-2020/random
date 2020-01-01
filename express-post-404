@@ -1,0 +1,43 @@
+require('dotenv').config()
+
+const express = require('express'),
+      app = express(),
+      bodyParser = require('body-parser');
+
+// support parsing of application/json type post data
+app.use(bodyParser.json());
+
+//support parsing of application/x-www-form-urlencoded post data
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const connection = require('./database');
+
+app.route('/users/')
+  .get(function(req, res, next) {
+    connection.query(
+      "SELECT * FROM `User`",
+      function(error, results, fields) {
+        if (error) throw error;
+        res.json(results);
+      }
+    );
+  });
+
+
+// POST method route
+app.post('/users', function (req, res) {
+  var post = { Id: req.body.FirstName, Name: req.body.LastName };
+  var query = connection.query('INSERT INTO User SET ?', post, function (error, results, fields) {
+    if (error){
+      console.log(error.message);
+    }
+  });
+  res.send('POST request to insert User');
+})
+
+
+app.get('/status', (req, res) => res.send('Working!'));
+
+// Port 8080 for Google App Engine
+app.set('port', process.env.PORT || 3000);
+app.listen(3000);
