@@ -1,0 +1,47 @@
+import React, { Component } from 'react'
+import axios, {AxiosResponse} from 'axios';
+
+export interface MyProps {
+}
+
+interface MyState {
+    suppliers: AxiosResponse<ServerData>
+}
+
+interface ServerResponse {
+    data: ServerData
+  }
+  
+  interface ServerData {
+    Id: number
+    Name: string
+  }
+
+export default class SupplierReport extends Component<MyProps, MyState> {
+
+    constructor(MyProps: Readonly<MyProps>){
+        super(MyProps);
+        this.state = {suppliers: []};
+      }
+
+    componentDidMount(){
+        axios.request<ServerData>({
+            url: 'http://localhost:3000/suppliers',
+            transformResponse: (r: ServerResponse) => r.data
+          }).then((response) => {
+            // `response` is of type `AxiosResponse<ServerData>`
+            // const { data } = response
+            // `data` is of type ServerData, correctly inferred
+            this.setState({suppliers: response.data});
+          })
+    }
+
+    render(){
+        const suppliers = this.state;
+        return (
+            <div>
+                Supplier Report
+            </div>
+        )
+    }
+}
