@@ -1,0 +1,80 @@
+[
+  {
+    "insertId": "bz2mg1ckngzy",
+    "jsonPayload": {
+      "trace": "fd58a5778f583474681aed4198017917",
+      "latencySeconds": "394.910",
+      "appLatencySeconds": "394.910"
+    },
+    "httpRequest": {
+      "requestMethod": "GET",
+      "requestUrl": "/",
+      "status": 502,
+      "responseSize": "552",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36",
+      "remoteIp": "2601:282:b02:92d0:50a3:8bc1:f71a:a07b",
+      "referer": "-",
+      "latency": "394.910s",
+      "protocol": "HTTP/1.1"
+    },
+    "resource": {
+      "type": "gae_app",
+      "labels": {
+        "module_id": "default",
+        "zone": "",
+        "project_id": "my-gcp-website",
+        "version_id": "20200121t205313"
+      }
+    },
+    "timestamp": "2020-01-22T04:19:50.123Z",
+    "labels": {
+      "compute.googleapis.com/resource_name": "6dd549c32c26",
+      "compute.googleapis.com/resource_id": "8839878674054018224",
+      "appengine.googleapis.com/trace_id": "fd58a5778f583474681aed4198017917",
+      "compute.googleapis.com/zone": "us-central1-f",
+      "appengine.googleapis.com/instance_name": "aef-default-20200121t205313-x0mk"
+    },
+    "logName": "projects/my-gcp-website/logs/appengine.googleapis.com%2Fnginx.request",
+    "trace": "projects/my-gcp-website/traces/fd58a5778f583474681aed4198017917",
+    "receiveTimestamp": "2020-01-22T04:20:06.478937695Z"
+  },
+  {
+    "insertId": "17a98wpg1pij3te",
+    "jsonPayload": {
+      "trace": "6fda8f3ec678157edb5dc9c49e1df94e",
+      "latencySeconds": "264.052",
+      "appLatencySeconds": "264.051"
+    },
+    "httpRequest": {
+      "requestMethod": "GET",
+      "requestUrl": "/favicon.ico",
+      "status": 502,
+      "responseSize": "552",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36",
+      "remoteIp": "2601:282:b02:92d0:50a3:8bc1:f71a:a07b",
+      "referer": "https://my-gcp-website.appspot.com/",
+      "latency": "264.052s",
+      "protocol": "HTTP/1.1"
+    },
+    "resource": {
+      "type": "gae_app",
+      "labels": {
+        "project_id": "my-gcp-website",
+        "version_id": "20200121t205313",
+        "module_id": "default",
+        "zone": ""
+      }
+    },
+    "timestamp": "2020-01-22T04:24:15.164Z",
+    "labels": {
+      "appengine.googleapis.com/trace_id": "6fda8f3ec678157edb5dc9c49e1df94e",
+      "compute.googleapis.com/zone": "us-central1-f",
+      "appengine.googleapis.com/instance_name": "aef-default-20200121t205313-x0mk",
+      "compute.googleapis.com/resource_name": "6dd549c32c26",
+      "compute.googleapis.com/resource_id": "8839878674054018224"
+    },
+    "logName": "projects/my-gcp-website/logs/appengine.googleapis.com%2Fnginx.request",
+    "trace": "projects/my-gcp-website/traces/6fda8f3ec678157edb5dc9c49e1df94e",
+    "receiveTimestamp": "2020-01-22T04:24:27.046936519Z"
+  }
+]
